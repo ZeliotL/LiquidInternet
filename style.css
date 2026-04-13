@@ -30,10 +30,18 @@ p {
   }
 /*/banner/*/
 .bannerLogo{
-  width: 15rem;
+  width: 40%;
   position: absolute;
   left: 1rem;
   top: .5rem;
+  bottom: 0;
+  color: #5b2e2e;
+  font-weight: 900;
+  display: flex;
+}
+.socials-button{
+  display: inline-flex;
+  height: 100%;
 }
 .banner-button {
   background-color: #ffb300;
@@ -66,6 +74,10 @@ p {
 .banner-background{
   color: #ffb300;
   flood-color: #ffb300;
+}
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+  content:url(Images/smile.png) url(Images/woah.png);
 }
 .face{
   padding: 4.5px !important;

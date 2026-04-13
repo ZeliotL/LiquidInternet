@@ -7,6 +7,11 @@ function waves(){
     svg.setAttribute("width", svgWidth);
     svg.setAttribute("height", svgHeight);
 
+    svg.appendChild(path);
+    const waveContainer = document.getElementById("footer-waves");
+    waveContainer.appendChild(svg);
+    path.setAttribute("fill", "#ffb300");
+
     //global sine variables
     var phaseBase = 0.1;
     var randomMultiplier = 100;
@@ -54,10 +59,7 @@ function waves(){
     
     
         path.setAttribute("d", pathData);
-        svg.appendChild(path);
-        const waveContainer = document.getElementById("footer-waves");
-        waveContainer.appendChild(svg);
-        path.setAttribute("fill", "#ffb300");                     
+                    
     }, 2);
 }
 

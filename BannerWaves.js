@@ -1,11 +1,16 @@
 function waves(){
-    var svgWidth = window.visualViewport.width;
+    var svgWidth = document.getElementById("banner").offsetWidth;
     const svgHeight = 60;
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
 
     svg.setAttribute("width", svgWidth);
     svg.setAttribute("height", svgHeight);
+
+    svg.appendChild(path);
+    const waveContainer = document.getElementById("banner-waves");
+    waveContainer.appendChild(svg);
+    path.setAttribute("fill", "#ffb300");
 
     //global sine variables
     var phaseBase = 0.1;
@@ -33,7 +38,7 @@ function waves(){
     const offset4 = (Math.random() * randomMultiplier)
     
     setInterval(() => {
-        svgWidth = window.visualViewport.width;
+        svgWidth = document.getElementById("banner").offsetWidth;
         svg.setAttribute("width", svgWidth);
         phaseBase += 0.01;
         let pathData = `M 0 0`
@@ -54,10 +59,6 @@ function waves(){
     
     
         path.setAttribute("d", pathData);
-        svg.appendChild(path);
-        const waveContainer = document.getElementById("banner-waves");
-        waveContainer.appendChild(svg);
-        path.setAttribute("fill", "#ffb300");
     }, 2);
 }
 
